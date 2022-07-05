@@ -149,6 +149,8 @@ MEDIA_URL = '/media/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+django_on_heroku.settings(locals())
+
 # Teste e debugação de EmailMessage, mandando a mensagem pro terminal
 EMAIL_HOST = 'smtp.mailtrap.io'
 EMAIL_HOST_USER = 'a90153a3efbf58'
@@ -165,4 +167,4 @@ CKEDITOR_CONFIGS = {
           },
     }
 
-django_on_heroku.settings(locals())
+
