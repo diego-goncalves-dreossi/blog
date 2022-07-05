@@ -30,7 +30,7 @@ SECRET_KEY = config('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG',default=False,cast=bool)
 
-ALLOWED_HOSTS = ['*','https://blog-site-dd.herokuapp.com/']
+ALLOWED_HOSTS = ['https://blog-site-dd.herokuapp.com/']
 # Dominios que a aplicação pode ser acessada
 
 # Application definition
