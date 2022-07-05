@@ -17,7 +17,6 @@ from decouple import config
 from dj_database_url import parse as dburl
 import django_on_heroku
 
-
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -149,7 +148,7 @@ MEDIA_URL = '/media/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-django_on_heroku.settings(locals())
+django_on_heroku.settings(locals()) # <-------------------------------------
 
 # Teste e debugação de EmailMessage, mandando a mensagem pro terminal
 EMAIL_HOST = 'smtp.mailtrap.io'
