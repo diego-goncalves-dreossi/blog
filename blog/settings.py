@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 
 from email.policy import default
+from logging.handlers import SysLogHandler
 from pathlib import Path
 import os
 from decouple import config
