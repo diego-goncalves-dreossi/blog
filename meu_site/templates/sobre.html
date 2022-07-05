@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block 'titulo' %}Home{% endblock 'titulo' %}
+
+{% block 'titulo-banner'%}Blog Django{% endblock 'titulo-banner' %}
+{% block 'subtitulo-banner'%}Desenvolvido para aprender o framework{% endblock 'subtitulo-banner' %}
+
+{% block 'conteudo' %}
+
+<div class="card">
+    <div class="card-body">
+        <span class="subheading">Programa desenvolvido por mim para aprender o framework com base no programa do programador Jon Code BR, vídeo usado como material disponível <a href="https://www.youtube.com/watch?v=K0pVZmw_pJU&t=29400s">aqui</a>.</span>
+    </div>
+</div>
+
+<div style="margin-top: 30px;" class="d-flex justify-content-end mb-4"><a class="btn btn-info text-uppercase" href="/">Voltar &rarr;</a></div>
+
+{% endblock 'conteudo' %}
+

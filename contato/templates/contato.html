@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% load bootstrap %}
+{% load static %}
+{% block 'titulo' %}Home{% endblock 'titulo' %}
+
+
+{% block 'titulo-banner'%}Entre em contato conosco{% endblock 'titulo-banner' %}
+{% block 'subtitulo-banner'%}Tem alguma pergunta?{% endblock 'subtitulo-banner' %}
+
+<!-- Main Content-->
+{% block 'conteudo' %}
+<div class="container">
+    <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+            <form method="post" action="{% url 'contato' %}">
+                {% csrf_token %}
+                {{form|bootstrap}}
+                <br>
+                {% if success %}
+                <div class="success">
+                    Email enviado com sucesso!
+                </div>
+                
+                {% endif %}
+                <!-- Submit Button-->
+                <div class="form-group">
+                    <button class="btn btn-primary" id="sendMessageButton" type="submit">Enviar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock 'conteudo' %}

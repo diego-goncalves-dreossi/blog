@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load bootstrap %}
+{% block 'titulo' %}Blog - Novo artigo{% endblock 'titulo' %}
+
+{% block 'titulo-banner'%}Blog Django{% endblock 'titulo-banner' %}
+{% block 'subtitulo-banner'%}Desenvolvido para aprender o framework{% endblock 'subtitulo-banner' %}
+
+{% block 'conteudo' %}
+
+    <div class="card" style="margin-top: 30px; margin-bottom: 30px;">
+        <div class="card-header">
+            <h1>Novo Artigo</h1>
+        </div>
+        
+           <div class="card-body">
+               <form action="" enctype="multipart/form-data" method="post">
+               {% csrf_token %}
+               {{ form|bootstrap }}
+               <input style="margin-top: 30px; margin-bottom: 30px;" type="submit" class="btn btn-primary" value="Salvar">
+               </form>
+           </div>
+    </div>
+
+
+{% endblock 'conteudo' %}

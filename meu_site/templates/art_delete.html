@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block 'titulo' %}Blog - Deletar artigo{% endblock 'titulo' %}
+
+{% block 'titulo-banner'%}Deletar{% endblock 'titulo-banner' %}
+{% block 'subtitulo-banner'%}Registros{% endblock 'subtitulo-banner' %}
+
+{% block 'conteudo' %}
+
+<h1>Deletar Artigo</h1>
+
+<form action="" method="post">
+    {% csrf_token %}
+    <p>Você tem certeza que deseja excluir esse artigo - {{art.titulo}} - ?</p>
+    <input type="submit" class="btn btn-danger" value="Confirmar">
+    <a href="/" class="btn btn-info">Cancelar</a>
+</form>
+
+{% endblock 'conteudo' %}

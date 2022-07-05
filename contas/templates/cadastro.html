@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% load static %}
+{% load bootstrap %}
+
+{% block 'titulo-banner'%}Cadastro{% endblock 'titulo-banner' %}
+{% block 'subtitulo-banner'%}Novos usuários{% endblock 'subtitulo-banner' %}
+
+{% block 'conteudo' %}
+<form method="post" action="{% url 'cadastro' %}">
+  {% csrf_token %}
+  {{ form|bootstrap }}
+  <input class="btn btn-primary" type="submit" value="Cadastre-se" />
+</form>
+{% endblock %}

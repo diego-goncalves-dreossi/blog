@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block 'titulo' %}Blog - Artigo{% endblock 'titulo' %}
+{% block 'header' %}
+
+{% if object.imagem %}
+<header class="masthead" style="background-image: url({{object.imagem.url}})">
+{% else %}
+<header class="masthead" style="background-image: url( '/static/img/post-sample-image.jpg')">
+{% endif %}
+    <div class="container position-relative px-4 px-lg-5">
+        <div class="row gx-4 gx-lg-5 justify-content-center">
+            <div class="col-md-10 col-lg-8 col-xl-7">
+                <div class="site-heading">
+                    <h1></h1>   
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+{% endblock 'header' %}
+{% block 'titulo-banner'%}{{art.titulo}}{% endblock 'titulo-banner' %}
+{% block 'subtitulo-banner'%}{{art.autor}}{% endblock 'subtitulo-banner' %}
+
+{% block 'conteudo' %}
+{% if messages %}
+<ul class="messages">
+    {% for message in messages %}
+    <li{% if message.tags %} class="{{ message.tags }}" {% endif %}>{{ message }}</li>
+        {% endfor %}
+</ul>
+{% endif %}
+
+<div class="post-entry">
+    <h2>{{art.titulo}}</h2>
+    <p>{{art.conteudo|safe}}</p>
+</div>
+
+{% if request.user.is_authenticated and user.is_superuser%}
+<div class="card">
+    <div class="card-body">
+        <a href="{{art.get_absolute_url_update}}" class="btn btn-primary">Editar</a>
+        <a href="{% url 'deletar_art' art.slug %}" class="btn btn-danger">Deletar</a>
+    </div>
+{% endif %}
+</div>
+
+{% endblock 'conteudo' %}

@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block 'titulo' %}Home{% endblock 'titulo' %}
+
+
+{% block 'titulo-banner'%}Blog Django{% endblock 'titulo-banner' %}
+{% block 'subtitulo-banner'%}Desenvolvido para aprender o framework{% endblock 'subtitulo-banner' %}
+
+{% block 'conteudo' %}
+
+    {% for art in object_list %}
+        <div class="post-preview">
+            <a href="{{art.get_absolute_url}}">
+                <h2 class="post-title">{{art.titulo}}</h2>
+                <h3 class="post-subtitle">{{art.conteudo|safe|truncatechars:"200"}}</h3>
+            </a>
+            <p class="post-meta">
+                Posted by
+                <a href="#!">Start Bootstrap</a>
+                on July 8, 2022
+            </p>
+        </div>
+        <hr class="my-4" />
+    {% endfor %}
+    <div class="d-flex justify-content-end mb-4"><a class="btn btn-primary text-uppercase" href="#!">Artigos antigos &rarr;</a></div>
+
+{% endblock 'conteudo' %}
+
